@@ -25,7 +25,6 @@
 .barchart-row-bar {
     height: 1.2em;
     margin: 0 0 .4em 0;
-    /*background: #edece4;*/
 }
 .barchart-row-bar-inner {
     display: inline-block;
@@ -65,10 +64,10 @@
     font-size: 0.65em;
 }
 @media (max-width: 640px) {
-    .barchart-source-and-credit > div {
-        width: 100%;
-        display: block;
-        float: none;
-        text-align: right;
-    }
+.barchart-source-and-credit > div {
+    width: 100%;
+    display: block;
+    float: none;
+    text-align: right;
+}
 }
