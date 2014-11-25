@@ -36,10 +36,10 @@
 		$('.generate-code').on('click', function() {
 			generateCode();
 		});
-		// var scrollTo = $('.after').offset().top - 10;
-		// $('html, body').animate({
-		// 	scrollTop: scrollTo
-		// }, 250);
+
+		$('.preview').on('click', '.barchart-row', function() {
+			$(this).toggleClass('highlight');
+		});
 	}
 
 	function setPercentWidth() {
@@ -81,7 +81,8 @@
 				result.data.push({
 					'name': cols[0].trim(),
 					'value': cols[1].trim(),
-					'value_number': num
+					'value_number': num,
+					'id': 'barchart-row-' + i
 				});
 				result.max = Math.max(result.max, num);
 				result.min = Math.min(result.min, num);
@@ -100,22 +101,22 @@
 		var $subhed = $('<div contenteditable="true" class="barchart-subhed">A subhed goes here</div>');
 		var $chart = $('<div class="barchart-content"></div>');
 		var $sourceCredit = $('<div class="barchart-source-and-credit"></div>');
-		var $credit = $('<div contenteditable="true" class="barchart-credit">First Last / Globe Staff</div>');
 		var $source = $('<div contenteditable="true" class="barchart-source">Data: Source</div>');
+		var $credit = $('<div contenteditable="true" class="barchart-credit">First Last / Globe Staff</div>');
 
 		var chartContent = '';
 		for(var i = 0; i < _result.data.length; i++) {
 			var datum = _result.data[i];
-			chartContent += '<div class="barchart-row" id="barchart-row-' + i + '">';
+			chartContent += '<div class="barchart-row" id="' + datum.id + '">';
 			chartContent += '<div class="barchart-row-name">' + datum.name + '</div>';
 			chartContent += '<div class="barchart-row-bar"><span class="barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
 			chartContent += '<span class="barchart-row-value">' + datum.value + '</span>';
-			chartContent += '</div>';
+			chartContent += '</div></div>';
 		}
 
 		$chart.append(chartContent);
-		$sourceCredit.append($credit);
 		$sourceCredit.append($source);
+		$sourceCredit.append($credit);
 		$header.append($hed);
 		$header.append($subhed);
 		
@@ -135,6 +136,17 @@
 			source: $('.barchart-source').text()
 		};
 
+		var highlight = {};
+
+		$('.barchart-row').each(function() {
+			if($(this).hasClass('highlight')) {
+				var id = $(this).attr('id');
+				highlight[id] = true;
+			}
+		});
+
+		console.log(highlight);
+
 		var html = '';
 
 		html += '<style>' + _css + '\n</style>';
@@ -147,7 +159,8 @@
 
 		for(var i = 0; i < _result.data.length; i++) {
 			var datum = _result.data[i];
-			html += '\n\t\t<div class="barchart-row" id="barchart-row-' + i + '">';
+			hiClass = highlight[datum.id] ? ' highlight' : '';
+			html += '\n\t\t<div class="barchart-row' + hiClass + '" id="' + datum.id + '">';	
 			html += '\n\t\t\t<div class="barchart-row-name">' + datum.name + '</div>';
 			html += '\n\t\t\t<div class="barchart-row-bar">';
 			html += '\n\t\t\t\t<span class="barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
@@ -158,8 +171,8 @@
 
 		html += '\n\t</div>';
 		html += '\n\t<div class="barchart-source-and-credit">';
-		html += '\n\t\t<div class="barchart-credit">' + copy.credit + '</div>';
 		html += '\n\t\t<div class="barchart-source">' + copy.source + '</div>';
+		html += '\n\t\t<div class="barchart-credit">' + copy.credit + '</div>';
 		html += '\n\t</div>';
 		html += '\n</div>';
 
@@ -168,3 +181,7 @@
 
 	init();
 })();
+
+Array.prototype.clone = function() {
+	return this.slice(0);
+};

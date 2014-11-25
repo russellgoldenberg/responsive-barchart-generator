@@ -23,7 +23,7 @@ h3 {
 	margin: 2em 0 0.5em 0;
 }
 h4 {
-	margin-top: 0;
+	margin: 0;
 	text-align: center;
 }
 section {
@@ -155,9 +155,26 @@ input {
 
 
 div[contenteditable=true] {
-	border: 1px dashed #aaa;
+	border-bottom: 1px dashed #aaa;
 }
 
 .output-code {
 	margin: 1em 0;
+}
+
+.options button {
+	display: inline-block;
+	background: #aaa;
+}
+
+.options button.current {
+	background: #d44;
+}
+
+.options {
+	margin-top: 1em;
+}
+
+.barchart-row {
+	cursor: pointer;
 }
