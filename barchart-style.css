@@ -1,6 +1,6 @@
 .barchart-container {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     margin: 1em 0;
     color: #1a1a1a;
 }
@@ -53,6 +53,9 @@
     float: left;
     font-weight: bold;
     font-size: 0.75em;
+}
+.barchart-source .pre-colon {
+    text-transform: uppercase;
 }
 .barchart-credit {
     margin: 0;
