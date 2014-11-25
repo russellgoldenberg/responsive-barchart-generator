@@ -157,6 +157,13 @@ input {
 
 div[contenteditable=true] {
 	border-bottom: 1px dashed #aaa;
+	outline: none;
+}
+
+.barchart-source span {
+	display: inline-block;
+	border-bottom: 1px dashed #aaa;
+	outline: none;
 }
 
 .output-code {

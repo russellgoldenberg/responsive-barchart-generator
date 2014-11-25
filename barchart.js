@@ -97,7 +97,7 @@
 				result.max = Math.max(result.max, num);
 				result.min = Math.min(result.min, num);
 			} else {
-				err = 'Not enough information in data';
+				err = 'error with data format';
 			}
 		}
 
@@ -111,7 +111,7 @@
 		var $subhed = $('<div contenteditable="true" class="barchart-subhed">A subhed goes here</div>');
 		var $chart = $('<div class="barchart-content"></div>');
 		var $sourceCredit = $('<div class="barchart-source-and-credit"></div>');
-		var $source = $('<div contenteditable="true" class="barchart-source">Data: Source</div>');
+		var $source = $('<div class="barchart-source"><span contenteditable="true" class="pre-colon">Data:</span> <span contenteditable="true" class="post-colon">My Source</span></div>');
 		var $credit = $('<div contenteditable="true" class="barchart-credit">First Last / Globe Staff</div>');
 
 		var chartContent = '';
@@ -146,7 +146,8 @@
 			hed: $('.barchart-hed').text(),
 			subhed: $('.barchart-subhed').text(),
 			credit: $('.barchart-credit').text(),
-			source: $('.barchart-source').text()
+			sourcePre: $('.barchart-source .pre-colon').text(),
+			sourcePost: $('.barchart-source .post-colon').text()
 		};
 
 		var highlight = {};
@@ -182,7 +183,7 @@
 
 		html += '\n\t</div>';
 		html += '\n\t<div class="barchart-source-and-credit">';
-		html += '\n\t\t<div class="barchart-source">' + copy.source + '</div>';
+		html += '\n\t\t<div class="barchart-source"><span class="pre-colon">' + copy.sourcePre + '</span><span class="post-colon">' + copy.sourcePost + '</span></div>';
 		html += '\n\t\t<div class="barchart-credit">' + copy.credit + '</div>';
 		html += '\n\t</div>';
 		html += '\n</div>';
