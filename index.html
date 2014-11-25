@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+        <title>Responsive Bar Chart Generator</title>
+        <meta name='description' content='A CSS and HTML responsive table generator by Russell Goldenberg.'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='barchart-style.css'>
+    </head>
+    <body>
+        <div class='container'>
+            <section>
+                <h2>Responsive Bar Chart Generator v0.1</h2>
+                <p class='intro'>
+                    A complete HTML/CSS solution for quick &amp; elegant responsive bar charts. Code is unminified to easily override styles.
+                </p>
+                <p class='instructions'>
+                    Copy and paste data from Excel or Google sheet. Data should be name and value pairs. Use numbers in the format you want them to be displayed (ex. if dollars, then use $24 or $24.00, not 24).
+                    <a class='demo' href='#'>Demo</a>
+                </p>
+                <textarea class='input'></textarea>
+                <button class='generate'>Create chart</button>
+            </section>
+            <section>
+                <div class='output hide'>
+                    <h3>Preview</h3>
+                    <p class='instructions'>
+                        Insert copy in the bordered boxes below. Select options, then click 'generate code'.
+                    </p> 
+                    <div class='preview'></div>
+                    <button class='generate-code'>Generate code</button>
+                    <textarea class='output-code'></textarea>
+                </div>
+                <div class='credits'>
+                    See <a target='_blank' href='https://github.com/russellgoldenberg/responsive-barchart-generator'>github repo</a> to submit issues and/or feature requests. Created by Russell Goldenberg.
+                    </p>
+                    <p class='russell'>
+                        <a target='_blank' href='http://russellgoldenberg.com'><img src='http://russellgoldenberg.com/img/codenberg.png'></a>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </body>
+    <script src='jquery.min.js'></script>
+    <script src='numeral.min.js'></script>
+    <script src='barchart.js'></script>
+    <!-- <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-37736972-3', 'auto');
+        ga('send', 'pageview');
+    </script> -->
+</html>

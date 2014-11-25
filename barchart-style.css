@@ -1,0 +1,67 @@
+.barchart-container {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    margin: 1em 0;
+}
+.barchart-header {
+    margin-bottom: 0.5em;
+}
+.barchart-hed {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.barchart-subhed {
+    font-size: 1em;
+}
+.barchart-row {
+    
+}
+.barchart-row-name {
+    margin: 0.1em 0 0.1em 0;
+    width: 100%;
+    font-size: 0.8em;
+}
+.barchart-row-bar {
+    height: 1.2em;
+    margin: 0 0 .4em 0;
+    background: #edece4;
+}
+.barchart-row-bar-inner {
+    display: inline-block;
+    height: 100%;
+    background: #bf6151;
+}
+.barchart-row-value {
+    display: inline-block;
+    color: #888;
+    vertical-align: top;
+    line-height: 1.5;
+    margin-left: .5em;
+    font-size: .8em;
+    font-weight: 700;
+}
+.barchart-source-and-credit {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1em;
+}
+.barchart-source-and-credit > div{
+    margin: 0;
+    text-align: right;
+}
+.barchart-credit {
+    color: #999;
+    text-transform: uppercase;
+    float: right;
+    font-size: 0.65em;
+}
+.barchart-source {
+    float: left;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+@media (max-width: 640px) {
+    .barchart-credit {
+        float: left;
+    }
+}
