@@ -1,8 +1,10 @@
-Responsive bar chart generator
-=============================
+Responsive Bar Chart Generator
+==============================
 
-What it sounds like. Just add data.
+[Try it now](http://russellgoldenberg.github.io/responsive-barchart-generator)
 
-##TODO
-* Straight to JPT
-* Multiple on same page instructions
+### Description
+HTML/CSS only responsive bar chart generator for your next bar chart.
+
+### Browser compatibility
+Probably everything.
