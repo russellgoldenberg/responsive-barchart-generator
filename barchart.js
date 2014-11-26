@@ -159,7 +159,7 @@
 		_copy.subhed = $('.barchart-subhed').text();
 		_copy.credit = $('.barchart-credit').text();
 		_copy.sourcePre = $('.barchart-source .pre-colon').text();
-		_copy.sourcePost = $('.barchart-source .post-colon').text(;
+		_copy.sourcePost = $('.barchart-source .post-colon').text();
 
 		var highlight = {};
 
