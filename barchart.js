@@ -8,7 +8,7 @@
 	var _copy = {
 		hed: 'Hed',
 		subhed: 'Subhed goes here.',
-		credit: 'Full Name / Globe Staff',
+		credit: 'First Last / Globe Staff',
 		sourcePre: 'DATA',
 		sourcePost: 'Sources'
 	};
@@ -123,9 +123,9 @@
 		var $hed = $('<div contenteditable="true" class="barchart-hed">' + _copy.hed + '</div>');
 		var $subhed = $('<div contenteditable="true" class="barchart-subhed">' + _copy.subhed + '</div>');
 		var $chart = $('<div class="barchart-content"></div>');
-		var $sourceCredit = $('<div class="barchart-source-and-credit">' + _copy.credit + '</div>');
+		var $sourceCredit = $('<div class="barchart-source-and-credit"></div>');
 		var $source = $('<div class="barchart-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
-		var $credit = $('<div contenteditable="true" class="barchart-credit">First Last / Globe Staff</div>');
+		var $credit = $('<div contenteditable="true" class="barchart-credit">' + _copy.credit + '</div>');
 
 		var chartContent = '';
 
