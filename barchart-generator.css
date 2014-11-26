@@ -1,10 +1,11 @@
 .options button {
 	display: inline-block;
 	background: #aaa;
+	color: #fff;
 }
 
 .options button.current {
-	background: #d44;
+	background: #000;
 }
 
 .options {
@@ -16,4 +17,7 @@
 }
 .output-code {
 	margin: 1em 0;
+}
+.preview {
+	font-weight: normal;
 }
