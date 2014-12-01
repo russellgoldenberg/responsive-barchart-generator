@@ -1,41 +1,41 @@
-.barchart-container {
+.responsive-barchart-container {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     margin: 1em 0;
     color: #1a1a1a;
 }
-.barchart-header {
+.responsive-barchart-header {
     margin-bottom: 0.5em;
 }
-.barchart-hed {
+.responsive-barchart-hed {
     font-size: 1.4em;
     font-weight: bold;
     margin-bottom: 0.2em;
 }
-.barchart-subhed {
+.responsive-barchart-subhed {
     font-size: 1em;
 }
-.barchart-row-name {
+.responsive-barchart-row-name {
     margin: 0.1em 0 0.1em 0;
     width: 100%;
     font-size: 0.9em;
 }
-.highlight .barchart-row-name {
+.highlight .responsive-barchart-row-name {
     font-weight: bold;
 }
-.barchart-row-bar {
+.responsive-barchart-row-bar {
     height: 1.2em;
     margin: 0 0 .4em 0;
 }
-.barchart-row-bar-inner {
+.responsive-barchart-row-bar-inner {
     display: inline-block;
     height: 100%;
     background: #edece4;
 }
-.highlight .barchart-row-bar-inner {
+.highlight .responsive-barchart-row-bar-inner {
     background: #bf6151;
 }
-.barchart-row-value {
+.responsive-barchart-row-value {
     display: inline-block;
     vertical-align: top;
     line-height: 1.5;
@@ -43,22 +43,22 @@
     font-size: .8em;
     font-weight: 700;
 }
-.barchart-source-and-credit {
+.responsive-barchart-source-and-credit {
     font-family: Georgia,"Times New Roman",Times,serif;
     width: 100%;
     overflow: hidden;
     margin-top: 1em;
 }
-.barchart-source {
+.responsive-barchart-source {
     margin: 0;
     float: left;
     font-weight: bold;
     font-size: 0.75em;
 }
-.barchart-source .pre-colon {
+.responsive-barchart-source .pre-colon {
     text-transform: uppercase;
 }
-.barchart-credit {
+.responsive-barchart-credit {
     margin: 0;
     color: #999;
     text-transform: uppercase;
@@ -68,7 +68,7 @@
     font-size: 0.65em;
 }
 @media (max-width: 640px) {
-.barchart-source-and-credit > div {
+.responsive-barchart-source-and-credit > div {
     width: 100%;
     display: block;
     float: none;

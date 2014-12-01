@@ -3,7 +3,7 @@
 	var _result;
 	var _demo = 'Superette\t$8.00\nTasty Treat\t$5.00\nBig Fresh\t$9.00\nSeta\'s Cafe\t$7.50';
 	var _maxWidth = 80;
-	var _css = '.barchart-container {\n\tfont-family: Helvetica, Arial, sans-serif;\n\tfont-size: 16px;\n\tmargin: 1em 0;\n\tcolor: #1a1a1a;\n}\n.barchart-header {\n\tmargin-bottom: 0.5em;\n}\n.barchart-hed {\n\tfont-size: 1.4em;\n\tfont-weight: bold;\n\tmargin-bottom: 0.2em;\n}\n.barchart-subhed {\n\tfont-size: 1em;\n}\n.barchart-row-name {\n\tmargin: 0.1em 0 0.1em 0;\n\twidth: 100%;\n\tfont-size: 0.9em;\n}\n.highlight .barchart-row-name {\n\tfont-weight: bold;\n}\n.barchart-row-bar {\n\theight: 1.2em;\n\tmargin: 0 0 .4em 0;\n}\n.barchart-row-bar-inner {\n\tdisplay: inline-block;\n\theight: 100%;\n\tbackground: #edece4;\n}\n.highlight .barchart-row-bar-inner {\n\tbackground: #bf6151;\n}\n.barchart-row-value {\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tline-height: 1.5;\n\tmargin-left: .5em;\n\tfont-size: .8em;\n\tfont-weight: 700;\n}\n.barchart-source-and-credit {\n\tfont-family: Georgia,"Times New Roman",Times,serif;\n\twidth: 100%;\n\toverflow: hidden;\n\tmargin-top: 1em;\n}\n.barchart-source {\n\tmargin: 0;\n\tfloat: left;\n\tfont-weight: bold;\n\tfont-size: 0.75em;\n}\n.barchart-source .pre-colon {\n\ttext-transform: uppercase;\n}\n.barchart-credit {\n\tmargin: 0;\n\tcolor: #999;\n\ttext-transform: uppercase;\n\tletter-spacing: 0.05em;\n\tfloat: right;\n\ttext-align: right;\n\tfont-size: 0.65em;\n}\n@media (max-width: 640px) {\n.barchart-source-and-credit > div {\n\twidth: 100%;\n\tdisplay: block;\n\tfloat: none;\n\ttext-align: right;\n}\n}';
+	var _css = '.responsive-barchart-container {\n\tfont-family: Helvetica, Arial, sans-serif;\n\tfont-size: 16px;\n\tmargin: 1em 0;\n\tcolor: #1a1a1a;\n}\n.responsive-barchart-header {\n\tmargin-bottom: 0.5em;\n}\n.responsive-barchart-hed {\n\tfont-size: 1.4em;\n\tfont-weight: bold;\n\tmargin-bottom: 0.2em;\n}\n.responsive-barchart-subhed {\n\tfont-size: 1em;\n}\n.responsive-barchart-row-name {\n\tmargin: 0.1em 0 0.1em 0;\n\twidth: 100%;\n\tfont-size: 0.9em;\n}\n.highlight .responsive-barchart-row-name {\n\tfont-weight: bold;\n}\n.responsive-barchart-row-bar {\n\theight: 1.2em;\n\tmargin: 0 0 .4em 0;\n}\n.responsive-barchart-row-bar-inner {\n\tdisplay: inline-block;\n\theight: 100%;\n\tbackground: #edece4;\n}\n.highlight .responsive-barchart-row-bar-inner {\n\tbackground: #bf6151;\n}\n.responsive-barchart-row-value {\n\tdisplay: inline-block;\n\tvertical-align: top;\n\tline-height: 1.5;\n\tmargin-left: .5em;\n\tfont-size: .8em;\n\tfont-weight: 700;\n}\n.responsive-barchart-source-and-credit {\n\tfont-family: Georgia,"Times New Roman",Times,serif;\n\twidth: 100%;\n\toverflow: hidden;\n\tmargin-top: 1em;\n}\n.responsive-barchart-source {\n\tmargin: 0;\n\tfloat: left;\n\tfont-weight: bold;\n\tfont-size: 0.75em;\n}\n.responsive-barchart-source .pre-colon {\n\ttext-transform: uppercase;\n}\n.responsive-barchart-credit {\n\tmargin: 0;\n\tcolor: #999;\n\ttext-transform: uppercase;\n\tletter-spacing: 0.05em;\n\tfloat: right;\n\ttext-align: right;\n\tfont-size: 0.65em;\n}\n@media (max-width: 640px) {\n.responsive-barchart-source-and-credit > div {\n\twidth: 100%;\n\tdisplay: block;\n\tfloat: none;\n\ttext-align: right;\n}\n}';
 	var _sortBy = 'default';
 	var _copy = {
 		hed: 'Hed',
@@ -49,7 +49,7 @@
 			generateCode();
 		});
 
-		$('.preview').on('click', '.barchart-row', function() {
+		$('.preview').on('click', '.responsive-barchart-row', function() {
 			$(this).toggleClass('highlight');
 		});
 
@@ -65,11 +65,11 @@
 	}
 
 	function updateCopy() {
-		_copy.hed = $('.barchart-hed').text();
-		_copy.subhed = $('.barchart-subhed').text();
-		_copy.credit = $('.barchart-credit').text();
-		_copy.sourcePre = $('.barchart-source .pre-colon').text();
-		_copy.sourcePost = $('.barchart-source .post-colon').text();
+		_copy.hed = $('.responsive-barchart-hed').text();
+		_copy.subhed = $('.responsive-barchart-subhed').text();
+		_copy.credit = $('.responsive-barchart-credit').text();
+		_copy.sourcePre = $('.responsive-barchart-source .pre-colon').text();
+		_copy.sourcePost = $('.responsive-barchart-source .post-colon').text();
 	}
 
 	function setPercentWidth() {
@@ -131,14 +131,14 @@
 	}
 
 	function createChart() {
-		var $container = $('<div class="barchart-container"></div>');
-		var $header = $('<div class="barchart-header"></div>');
-		var $hed = $('<div contenteditable="true" class="barchart-hed">' + _copy.hed + '</div>');
-		var $subhed = $('<div contenteditable="true" class="barchart-subhed">' + _copy.subhed + '</div>');
-		var $chart = $('<div class="barchart-content"></div>');
-		var $sourceCredit = $('<div class="barchart-source-and-credit"></div>');
-		var $source = $('<div class="barchart-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
-		var $credit = $('<div contenteditable="true" class="barchart-credit">' + _copy.credit + '</div>');
+		var $container = $('<div class="responsive-barchart-container"></div>');
+		var $header = $('<div class="responsive-barchart-header"></div>');
+		var $hed = $('<div contenteditable="true" class="responsive-barchart-hed">' + _copy.hed + '</div>');
+		var $subhed = $('<div contenteditable="true" class="responsive-barchart-subhed">' + _copy.subhed + '</div>');
+		var $chart = $('<div class="responsive-barchart-content"></div>');
+		var $sourceCredit = $('<div class="responsive-barchart-source-and-credit"></div>');
+		var $source = $('<div class="responsive-barchart-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
+		var $credit = $('<div contenteditable="true" class="responsive-barchart-credit">' + _copy.credit + '</div>');
 
 		var chartContent = '';
 
@@ -146,10 +146,10 @@
 
 		for(var i = 0; i < sortedResults.length; i++) {
 			var datum = sortedResults[i];
-			chartContent += '<div class="barchart-row" id="' + datum.id + '">';
-			chartContent += '<div class="barchart-row-name">' + datum.name + '</div>';
-			chartContent += '<div class="barchart-row-bar"><span class="barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
-			chartContent += '<span class="barchart-row-value">' + datum.value + '</span>';
+			chartContent += '<div class="responsive-barchart-row" id="' + datum.id + '">';
+			chartContent += '<div class="responsive-barchart-row-name">' + datum.name + '</div>';
+			chartContent += '<div class="responsive-barchart-row-bar"><span class="responsive-barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
+			chartContent += '<span class="responsive-barchart-row-value">' + datum.value + '</span>';
 			chartContent += '</div></div>';
 		}
 
@@ -172,7 +172,7 @@
 
 		var highlight = {};
 
-		$('.barchart-row').each(function() {
+		$('.responsive-barchart-row').each(function() {
 			if($(this).hasClass('highlight')) {
 				var id = $(this).attr('id');
 				highlight[id] = true;
@@ -182,29 +182,34 @@
 		var html = '';
 
 		html += '<style>' + _css + '\n</style>';
-		html += '\n<div class="barchart-container">';
-		html += '\n\t<div class="barchart-header">';
-		html += '\n\t\t<div class="barchart-hed">' + _copy.hed + '</div>';
-		html += '\n\t\t<div class="barchart-subhed">' + _copy.subhed + '</div>';
+		html += '\n<div class="responsive-barchart-container">';
+		html += '\n\t<div class="responsive-barchart-header">';
+
+		if(_copy.hed.length > 0 ) {
+			html += '\n\t\t<div class="responsive-barchart-hed">' + _copy.hed + '</div>';	
+		}
+		if(_copy.subhed.length > 0 ) {
+			html += '\n\t\t<div class="responsive-barchart-subhed">' + _copy.subhed + '</div>';	
+		}
 		html += '\n\t</div>';
-		html += '\n\t<div class="barchart-content">';
+		html += '\n\t<div class="responsive-barchart-content">';
 
 		for(var i = 0; i < _result.data.length; i++) {
 			var datum = _result.data[i];
 			hiClass = highlight[datum.id] ? ' highlight' : '';
-			html += '\n\t\t<div class="barchart-row' + hiClass + '" id="' + datum.id + '">';	
-			html += '\n\t\t\t<div class="barchart-row-name">' + datum.name + '</div>';
-			html += '\n\t\t\t<div class="barchart-row-bar">';
-			html += '\n\t\t\t\t<span class="barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
-			html += '\n\t\t\t\t<span class="barchart-row-value">' + datum.value + '</span>';
+			html += '\n\t\t<div class="responsive-barchart-row' + hiClass + '" id="' + datum.id + '">';	
+			html += '\n\t\t\t<div class="responsive-barchart-row-name">' + datum.name + '</div>';
+			html += '\n\t\t\t<div class="responsive-barchart-row-bar">';
+			html += '\n\t\t\t\t<span class="responsive-barchart-row-bar-inner" style="width: ' + datum.percent + '"></span>';
+			html += '\n\t\t\t\t<span class="responsive-barchart-row-value">' + datum.value + '</span>';
 			html += '\n\t\t\t</div>'
 			html += '\n\t\t</div>';
 		}
 
 		html += '\n\t</div>';
-		html += '\n\t<div class="barchart-source-and-credit">';
-		html += '\n\t\t<div class="barchart-source"><span class="pre-colon">' + _copy.sourcePre + '</span><span class="post-colon">' + _copy.sourcePost + '</span></div>';
-		html += '\n\t\t<div class="barchart-credit">' + _copy.credit + '</div>';
+		html += '\n\t<div class="responsive-barchart-source-and-credit">';
+		html += '\n\t\t<div class="responsive-barchart-source"><span class="pre-colon">' + _copy.sourcePre + '</span>: <span class="post-colon">' + _copy.sourcePost + '</span></div>';
+		html += '\n\t\t<div class="responsive-barchart-credit">' + _copy.credit + '</div>';
 		html += '\n\t</div>';
 		html += '\n</div>';
 
