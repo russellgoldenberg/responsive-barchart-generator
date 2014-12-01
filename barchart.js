@@ -135,7 +135,7 @@
 		var $header = $('<div class="responsive-graphic-header"></div>');
 		var $hed = $('<div contenteditable="true" class="responsive-graphic-hed">' + _copy.hed + '</div>');
 		var $subhed = $('<div contenteditable="true" class="responsive-graphic-subhed">' + _copy.subhed + '</div>');
-		var $content = $('<div class="responsive-graphic-content"></div>');
+		var $content = $('<div class="responsive-graphic-content rg-barchart"></div>');
 		var $sourceCredit = $('<div class="responsive-graphic-source-and-credit"></div>');
 		var $source = $('<div class="responsive-graphic-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
 		var $credit = $('<div contenteditable="true" class="responsive-graphic-credit">' + _copy.credit + '</div>');
