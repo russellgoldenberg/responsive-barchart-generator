@@ -65,11 +65,11 @@
 	}
 
 	function updateCopy() {
-		_copy.hed = $('.responsive-barchart-hed').text();
-		_copy.subhed = $('.responsive-barchart-subhed').text();
-		_copy.credit = $('.responsive-barchart-credit').text();
-		_copy.sourcePre = $('.responsive-barchart-source .pre-colon').text();
-		_copy.sourcePost = $('.responsive-barchart-source .post-colon').text();
+		_copy.hed = $('.responsive-graphic-hed').text();
+		_copy.subhed = $('.responsive-graphic-subhed').text();
+		_copy.credit = $('.responsive-graphic-credit').text();
+		_copy.sourcePre = $('.responsive-graphic-source .pre-colon').text();
+		_copy.sourcePost = $('.responsive-graphic-source .post-colon').text();
 	}
 
 	function setPercentWidth() {
@@ -131,14 +131,14 @@
 	}
 
 	function createChart() {
-		var $container = $('<div class="responsive-barchart-container"></div>');
-		var $header = $('<div class="responsive-barchart-header"></div>');
-		var $hed = $('<div contenteditable="true" class="responsive-barchart-hed">' + _copy.hed + '</div>');
-		var $subhed = $('<div contenteditable="true" class="responsive-barchart-subhed">' + _copy.subhed + '</div>');
-		var $chart = $('<div class="responsive-barchart-content"></div>');
-		var $sourceCredit = $('<div class="responsive-barchart-source-and-credit"></div>');
-		var $source = $('<div class="responsive-barchart-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
-		var $credit = $('<div contenteditable="true" class="responsive-barchart-credit">' + _copy.credit + '</div>');
+		var $container = $('<div class="responsive-graphic-container"></div>');
+		var $header = $('<div class="responsive-graphic-header"></div>');
+		var $hed = $('<div contenteditable="true" class="responsive-graphic-hed">' + _copy.hed + '</div>');
+		var $subhed = $('<div contenteditable="true" class="responsive-graphic-subhed">' + _copy.subhed + '</div>');
+		var $content = $('<div class="responsive-graphic-content"></div>');
+		var $sourceCredit = $('<div class="responsive-graphic-source-and-credit"></div>');
+		var $source = $('<div class="responsive-graphic-source"><span contenteditable="true" class="pre-colon">' + _copy.sourcePre + '</span>: <span contenteditable="true" class="post-colon">' + _copy.sourcePost + '</span></div>');
+		var $credit = $('<div contenteditable="true" class="responsive-graphic-credit">' + _copy.credit + '</div>');
 
 		var chartContent = '';
 
@@ -153,14 +153,14 @@
 			chartContent += '</div></div>';
 		}
 
-		$chart.append(chartContent);
+		$content.append(chartContent);
 		$sourceCredit.append($source);
 		$sourceCredit.append($credit);
 		$header.append($hed);
 		$header.append($subhed);
 		
 		$container.append($header);
-		$container.append($chart);
+		$container.append($content);
 		$container.append($sourceCredit);
 
 		$('.output').removeClass('hide');
@@ -182,17 +182,17 @@
 		var html = '';
 
 		html += '<style>' + _css + '\n</style>';
-		html += '\n<div class="responsive-barchart-container">';
-		html += '\n\t<div class="responsive-barchart-header">';
+		html += '\n<div class="responsive-graphic-container">';
+		html += '\n\t<div class="responsive-graphic-header">';
 
 		if(_copy.hed.length > 0 ) {
-			html += '\n\t\t<div class="responsive-barchart-hed">' + _copy.hed + '</div>';	
+			html += '\n\t\t<div class="responsive-graphic-hed">' + _copy.hed + '</div>';	
 		}
 		if(_copy.subhed.length > 0 ) {
-			html += '\n\t\t<div class="responsive-barchart-subhed">' + _copy.subhed + '</div>';	
+			html += '\n\t\t<div class="responsive-graphic-subhed">' + _copy.subhed + '</div>';	
 		}
 		html += '\n\t</div>';
-		html += '\n\t<div class="responsive-barchart-content">';
+		html += '\n\t<div class="responsive-graphic-content">';
 
 		for(var i = 0; i < _result.data.length; i++) {
 			var datum = _result.data[i];
@@ -207,9 +207,9 @@
 		}
 
 		html += '\n\t</div>';
-		html += '\n\t<div class="responsive-barchart-source-and-credit">';
-		html += '\n\t\t<div class="responsive-barchart-source"><span class="pre-colon">' + _copy.sourcePre + '</span>: <span class="post-colon">' + _copy.sourcePost + '</span></div>';
-		html += '\n\t\t<div class="responsive-barchart-credit">' + _copy.credit + '</div>';
+		html += '\n\t<div class="responsive-graphic-source-and-credit">';
+		html += '\n\t\t<div class="responsive-graphic-source"><span class="pre-colon">' + _copy.sourcePre + '</span>: <span class="post-colon">' + _copy.sourcePost + '</span></div>';
+		html += '\n\t\t<div class="responsive-graphic-credit">' + _copy.credit + '</div>';
 		html += '\n\t</div>';
 		html += '\n</div>';
 
