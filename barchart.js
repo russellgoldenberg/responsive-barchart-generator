@@ -195,8 +195,10 @@
 		html += '\n\t</div>';
 		html += '\n\t<div class="rg-content">';
 
-		for(var i = 0; i < _result.data.length; i++) {
-			var datum = _result.data[i];
+		var sortedResults = sortResults();
+
+		for(var i = 0; i < sortedResults.length; i++) {
+			var datum = sortedResults[i];
 			hiClass = highlight[datum.id] ? ' highlight' : '';
 			html += '\n\t\t<div class="rg-barchart-row' + hiClass + '" id="' + datum.id + '">';	
 			html += '\n\t\t\t<div class="rg-barchart-row-name">' + datum.name + '</div>';
