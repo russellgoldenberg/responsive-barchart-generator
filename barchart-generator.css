@@ -3,7 +3,6 @@
 	background: #aaa;
 	color: #fff;
 }
-
 .options button.current {
 	background: #000;
 }
@@ -12,12 +11,6 @@
 	margin-top: 1em;
 }
 
-.barchart-row {
+.responsive-barchart-row {
 	cursor: pointer;
-}
-.output-code {
-	margin: 1em 0;
-}
-.preview {
-	font-weight: normal;
 }
