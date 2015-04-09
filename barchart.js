@@ -8,7 +8,7 @@
 		hed: 'Hed',
 		subhed: 'Subhed goes here.',
 		credit: 'Globe Staff',
-		sourcePre: 'DATA',
+		sourcePre: 'SOURCE',
 		sourcePost: 'Sources'
 	};
 
